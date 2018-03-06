@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Modelos
 {
     public class Endereco
     {
+        public int enderecoID { get; set; }
 
-        public int EnderecoiD { get; set; }
+        public string rua { get; set; }
 
-        public string  Rua { get; set; }
+        public int numero { get; set; }
 
-        public int Numero { get; set; }
+        public string complemento { get; set; }
 
-        public string Complemento { get; set; }
     }
 }

@@ -1,9 +1,5 @@
-﻿using Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Modelos;
 
 namespace ConsoleView
 {
@@ -11,7 +7,10 @@ namespace ConsoleView
     {
         static void Main(string[] args)
         {
-            
+            Pessoa p = new Pessoa();
+
+
+
         }
     }
 }

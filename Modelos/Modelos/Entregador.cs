@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelos
 {
-   public class Entregador:Pessoa
+    public class Entregador:Pessoa
     {
     }
 }

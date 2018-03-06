@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{714F0CF0-7346-4DB2-980E-FAA2A3515AAF}</ProjectGuid>
+    <ProjectGuid>{7D2238EB-C163-4C4C-ACBD-D6D5FACEB4A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleView</RootNamespace>
@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelos\Modelos.csproj">
-      <Project>{b054ed50-d5e9-4b85-b8f1-6465cfcedcf4}</Project>
+      <Project>{0f734220-ceb0-4f50-b0e0-a0bba3cd72f5}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
   </ItemGroup>
