@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelos", "Modelos\Modelos.csproj", "{0F734220-CEB0-4F50-B0E0-A0BBA3CD72F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleView", "ConsoleView\ConsoleView.csproj", "{7D2238EB-C163-4C4C-ACBD-D6D5FACEB4A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{6EC0D656-CA01-4B95-9AEC-040C4A3CEC61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{7D2238EB-C163-4C4C-ACBD-D6D5FACEB4A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D2238EB-C163-4C4C-ACBD-D6D5FACEB4A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D2238EB-C163-4C4C-ACBD-D6D5FACEB4A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC0D656-CA01-4B95-9AEC-040C4A3CEC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC0D656-CA01-4B95-9AEC-040C4A3CEC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC0D656-CA01-4B95-9AEC-040C4A3CEC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC0D656-CA01-4B95-9AEC-040C4A3CEC61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D45C8E94-E8B9-40DF-9564-0CA59FB09147}
 	EndGlobalSection
 EndGlobal
