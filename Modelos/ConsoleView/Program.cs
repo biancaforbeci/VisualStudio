@@ -2,6 +2,8 @@
 using Controllers;
 using Modelos;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ConsoleView
 {
@@ -26,7 +28,7 @@ namespace ConsoleView
             Console.WriteLine("2 - Pesquisar Cliente");
             Console.WriteLine("3 - Editar Cliente");
 
-            Console.Write("- Geral -");
+            Console.WriteLine("- Geral -");
             Console.WriteLine("4 - Limpar Tela");
             Console.WriteLine("5 - Sair");
 
@@ -39,21 +41,23 @@ namespace ConsoleView
         static void Main(string[] args)
         {
             OpcoesMenuPrincipal opcaoDigitada = OpcoesMenuPrincipal.Sair;
-
+            ClienteController cc = new ClienteController();
             do
             {
                 opcaoDigitada = Menu();
-
+                
                 switch (opcaoDigitada)
                 {
+                    
                     case OpcoesMenuPrincipal.CadastrarCliente:
-                        Cliente c = CadastrarCliente();
-                        ClienteController cc = new ClienteController();
+                        Cliente c = CadastrarCliente();                        
                         cc.SalvarCliente(c);
                         ExibirDadosCliente(c);
                         break;
                     case OpcoesMenuPrincipal.PesquisarCliente:
-                        PesquisarCliente();
+                        Console.WriteLine("Digite o nome do cliente a ser procurado: ");
+                        string pesquisa = Console.ReadLine();
+                        PesquisarCliente(cc.ProcuraCliente(pesquisa));
                         break;
                     case OpcoesMenuPrincipal.EditarCliente:
                         break;
@@ -118,14 +122,28 @@ namespace ConsoleView
 
         }
 
-        private static Cliente PesquisarCliente()
+        private static void PesquisarCliente(IEnumerable<Cliente>cli)
         {
-            // TODO: fazer depois
-            return new Cliente();
+            if (cli != null)
+            {
+                foreach (var item in cli)
+                {
+                    Console.WriteLine("Oi");
+                    Console.WriteLine("Nome:" + item.nome);
+                    Console.WriteLine("CPF: " + item.cpf);
+                    Console.WriteLine("Rua: " + item._endereco.rua);
+                    Console.WriteLine("Número: " + item._endereco.numero);
+                    Console.WriteLine("Complemento: " + item._endereco.complemento);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Não encontrado esse cliente");
+            }
 
         }
 
-        private static void ExibirDadosCliente(Cliente cliente)
+       private static void ExibirDadosCliente(Cliente cliente)
         {
             Console.WriteLine("--- DADOS CLIENTE ----");
             Console.WriteLine("ID: " + cliente.pessoaID);

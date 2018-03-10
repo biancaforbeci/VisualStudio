@@ -1,12 +1,15 @@
 ﻿using Modelos;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Controllers
 {
     public class ClienteController
     {
         static List<Cliente> MeusClientes = new List<Cliente>();
+       
 
         public ClienteController()
         {
@@ -20,5 +23,17 @@ namespace Controllers
 
 
         }
+
+        public IEnumerable<Cliente> ProcuraCliente (string nome)
+        {
+            Console.WriteLine("here");
+
+            var a = from item in MeusClientes where item.nome.Equals(nome) select item;
+
+            return a;
+
+        }
+
+        
     }
 }
