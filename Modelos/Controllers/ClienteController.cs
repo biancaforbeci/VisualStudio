@@ -24,16 +24,25 @@ namespace Controllers
 
         }
 
-        public IEnumerable<Cliente> ProcuraCliente (string nome)
+        public IEnumerable<Cliente> ProcuraCliente (string nome)  //public Cliente PesquisarCliente()
         {
             Console.WriteLine("here");
 
-            var a = from item in MeusClientes where item.nome.Equals(nome) select item;
+            var a = from item in MeusClientes where item.nome.ToLower().Equals(nome.Trim().ToLower()) select item;
+
+            // if(c != null){
+            //  return c.FirstorDefault();
+            // else
+            // return null;
 
             return a;
 
         }
 
+        public void ExcluirCliente(Cliente c)
+        {
+            MeusClientes.Remove(c);
+        }
         
     }
 }
