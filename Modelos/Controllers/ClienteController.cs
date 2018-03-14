@@ -1,6 +1,4 @@
 ﻿using Modelos;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,40 +7,47 @@ namespace Controllers
     public class ClienteController
     {
         static List<Cliente> MeusClientes = new List<Cliente>();
-       
-
-        public ClienteController()
-        {
-            MeusClientes = new List<Cliente>(); //referência a lista está instaciada
-        }
+        static int ultimoID = 0;
 
         public void SalvarCliente(Cliente cliente)
         {
-            // TODO: Persistir os dados do cliente
+            int id = ultimoID + 1;
+            ultimoID = id;
+
+            cliente.pessoaID = id;
             MeusClientes.Add(cliente);
-
-
         }
 
-        public IEnumerable<Cliente> ProcuraCliente (string nome)  //public Cliente PesquisarCliente()
+        public IEnumerable<Cliente> PesquisarPorNome(string nome)
         {
-            Console.WriteLine("here");
+            var c = from x in MeusClientes
+                    where x.nome.ToLower().Contains(nome.Trim().ToLower())
+                    select x;
 
-            var a = from item in MeusClientes where item.nome.ToLower().Equals(nome.Trim().ToLower()) select item;
-
-            // if(c != null){
-            //  return c.FirstorDefault();
-            // else
-            // return null;
-
-            return a;
-
+            if (c != null)
+                return c;
+            else
+                return null;
         }
 
-        public void ExcluirCliente(Cliente c)
+        public Cliente PesquisarPorID(int idCliente)
         {
-            MeusClientes.Remove(c);
+            var c = from x in MeusClientes
+                    where x.pessoaID.Equals(idCliente)
+                    select x;
+
+            if (c != null)
+                return c.FirstOrDefault();
+            else
+                return null;
         }
-        
+
+        public void ExcluirCliente(int idCliente)
+        {
+            Cliente cli = PesquisarPorID(idCliente);
+
+            if (cli != null)
+                MeusClientes.Remove(cli);
+        }
     }
 }
