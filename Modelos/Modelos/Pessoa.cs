@@ -7,7 +7,7 @@ namespace Modelos
         public string nome { get; set; }
         public string cpf { get; set; }
         public int enderecoID { get; set; }        
-        public Endereco _endereco { get; set; }
+       
         
     }
 }

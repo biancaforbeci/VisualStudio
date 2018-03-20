@@ -9,23 +9,25 @@ namespace Controllers
         static List<Cliente> MeusClientes = new List<Cliente>();
         static int ultimoID = 0;
 
-        public void SalvarCliente(Cliente cliente)
+        public int SalvarCliente(Cliente cliente)
         {
             int id = ultimoID + 1;
             ultimoID = id;
 
             cliente.pessoaID = id;
             MeusClientes.Add(cliente);
+
+            return cliente.pessoaID;
         }
 
-        public IEnumerable<Cliente> PesquisarPorNome(string nome)
+        public Cliente PesquisarPorNome(string nome)
         {
             var c = from x in MeusClientes
                     where x.nome.ToLower().Contains(nome.Trim().ToLower())
                     select x;
 
             if (c != null)
-                return c;
+                return c.FirstOrDefault();
             else
                 return null;
         }
@@ -48,6 +50,25 @@ namespace Controllers
 
             if (cli != null)
                 MeusClientes.Remove(cli);
+                
+            
         }
+
+        public List<Cliente> ListarCliente()
+        {
+            return MeusClientes;
+        }
+
+        public Cliente EditarCliente(int n)
+        {
+            Cliente c = PesquisarPorID(n);
+
+            if (c != null)
+                return c;
+            else
+                return null;
+        }
+
+        
     }
 }
