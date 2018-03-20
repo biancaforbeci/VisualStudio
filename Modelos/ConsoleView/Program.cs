@@ -222,10 +222,9 @@ namespace ConsoleView
                 Console.Write("Digite o cpf novo: ");
                 cli.cpf = Console.ReadLine();
 
-                EnderecoController e = new EnderecoController();
-
-                Endereco endereco = EditarEndereco(cli);
-                e.EditarEndereco(endereco,cli.enderecoID);
+                Endereco end=EditarEndereco(cli);
+                cli.enderecoID = end.enderecoID;
+               
 
                 ExibirDadosCliente(cli);
             }

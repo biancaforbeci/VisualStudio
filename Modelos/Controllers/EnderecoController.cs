@@ -39,12 +39,14 @@ namespace Controllers
         }
 
                 
-        public void EditarEndereco(Endereco end, int id)
+        public Endereco EditarEndereco( int id)
         {
-            Endereco antigo =ListarEndereco(id);
-            antigo.rua = end.rua;
-            antigo.numero = end.numero;
-            antigo.complemento = end.complemento;
+            Endereco e = ListarEndereco(id);
+
+            if (e != null)
+                return e;
+            else
+                return null;
 
         }       
 
