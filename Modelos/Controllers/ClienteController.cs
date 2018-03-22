@@ -59,15 +59,18 @@ namespace Controllers
             return MeusClientes;
         }
 
-        public Cliente EditarCliente(int n)
+        public void EditarCliente(int idClienteEditar, Cliente clienteEditado)
         {
-            Cliente c = PesquisarPorID(n);
+            Cliente clienteEditar = PesquisarPorID(idClienteEditar);
 
-            if (c != null)
-                return c;
-            else
-                return null;
-        }
+            if (clienteEditar != null)
+
+                clienteEditar.nome = clienteEditado.nome;
+                clienteEditar.cpf = clienteEditado.cpf;
+                clienteEditar.enderecoID = clienteEditado.enderecoID;
+
+                
+         }
 
         
     }
